@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>RandomHornMod</AssemblyName>
+    <Description>Random Horn Mod</Description>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all"/>
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="BepInEx.Core" Version="5.*"/>
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*"/>
+    <PackageReference Include="UnityEngine.Modules" Version="2022.3.9" IncludeAssets="compile"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\AppData\Roaming\r2modmanPlus-local\LethalCompany\profiles\Lethal Company\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+
+    <Reference Include="Assembly-CSharp" HintPath="F:\Games\Lethal Company v69\Lethal Company_Data\Managed\Assembly-CSharp.dll" Publicize="true"/>
+
+    <Reference Include="BepInEx">
+      <HintPath>..\..\..\AppData\Roaming\r2modmanPlus-local\LethalCompany\profiles\Lethal Company\BepInEx\core\BepInEx.dll</HintPath>
+    </Reference>
+
+    <Reference Include="mscorlib">
+      <HintPath>F:\Games\Lethal Company v69\Lethal Company_Data\Managed\mscorlib.dll</HintPath>
+    </Reference>
+
+    <Reference Include="Unity.Netcode.Runtime">
+      <HintPath>F:\Games\Lethal Company v69\Lethal Company_Data\Managed\Unity.Netcode.Runtime.dll</HintPath>
+    </Reference>
+
+    <Reference Include="UnityEngine">
+      <HintPath>F:\Games\Lethal Company v69\Lethal Company_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>F:\Games\Lethal Company v69\Lethal Company_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>F:\Games\Lethal Company v69\Lethal Company_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>F:\Games\Lethal Company v69\Lethal Company_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+
+  </ItemGroup>
+</Project>
